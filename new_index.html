@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+		<style>
+			*{padding:0;margin:0}
+			h4{text-align: center;font-weight: normal;font-size:22px;color:#666}
+			.wrap{width:100%;background:#ff4931;width:100%;height:600px;padding-top:1px;transition: 1.5s all;}
+			.wrap_inner{transition:1.5s all;width:660px;height:400px;margin:100px auto;background:#ffa498;position: relative;}
+		   
+		    .wrap .big_box{width:50%;float:left;display: table;height:100%;}
+		    .wrap .big_box .login_box, .wrap .big_box .register_box{vertical-align: middle;text-align: center;color: #fff;display: table-cell;}
+		    .wrap .login_box p,.wrap .register_box p{color:#fff;font-size:19px;margin-bottom:10px;text-align: center;}
+		    .wrap .login_box .login ,.wrap .register_box .register{width:156px;height:48px;border-radius:30px;text-align: center;margin:0 auto;
+		                                                           line-height:48px;color:#fff;background-color:#FF4931;cursor:pointer}
+	        .wrap .form_wrap{transition:1.5s all;position:absolute;z-index: 2;width:212px;height:480px;overflow:hidden;background:#fff;top:-45px;left:30px;padding:0 25px}
+		    .wrap .form_wrap input{width:200px;height:40px;border:1px solid #999;}
+		    .wrap .form_wrap label{font-size:13px;color:#999;position:relative ;top:8px;z-index: 3;
+		                                  text-align: left !important;left:10px;background: #fff;padding: 0 3px;}
+		     .wrap .form_wrap .submit{width:103px;height:47px;background:#ff4931;line-height:47px;text-align: center;margin-top:15px;
+		                                     border-radius: 30px;position: relative;left:25%;color:#fff;cursor:pointer;}
+		     .wrap .form_wrap .login_form{width:100%;margin-top:125px;position: absolute;top:0;left:25px;    transition: 1.5s all;}
+		     .wrap .form_wrap .register_form{position: absolute;top:0;margin-top:50px;transition: 1.5s all;left:367px;}
+		     .wrap .left_1{left:53%}
+		</style>
+		<script>
+			$(function(){
+				$("#register").on("click",function(){
+					$(".wrap").css({"background-color":'#e0b722'})
+					$(".wrap .wrap_inner").css({"background-color":'#f0db90'})
+				    $("#login_form").css({"left":"-100%"})
+				    $("#register_form").css({"left":"25px"})
+			       $(".wrap .form_wrap").addClass("left_1");
+				})
+				$("#login").on("click",function(){
+					$(".wrap").css({"background-color":'#ff4931'})
+					$(".wrap .wrap_inner").css({"background-color":'#ffa498'})
+				    $("#login_form").css({"left":"25px"})
+				    $("#register_form").css({"left":"367px"})
+			       $(".wrap .form_wrap").removeClass("left_1");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="wrap_inner">
+				<div class="big_box">
+					<div class="login_box">
+						<p>Already an uesr?</p>
+						<div class="login" id="login">Login</div>
+					</div>
+				</div>
+				<div class="big_box">
+					<div class="register_box">
+						<p>Donnot have account</p>
+						<div class="register" id="register">Register</div>
+					</div>
+				</div>
+				<div class="form_wrap" id="form_wrap">
+					<div class="login_form" id="login_form">
+						<h4>Login</h4>
+						<label>Mail or Username</label>
+						<input type="text" value="" />
+						<label>Password</label>
+						<input type="password"/>
+						<input type="submit" class="submit" value="login">
+					</div>
+					<div class="register_form" id="register_form">
+						<h4>register_form</h4>
+						<label>Full Name</label>
+						<input type="text" value="" />
+						<label>Mail</label>
+						<input type="email"/>
+						<label>User Name</label>
+						<input type="text"/ value=""/>
+						<label>Password</label>
+						<input type="password"/>
+						<input type="submit" class="submit" value="register">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
